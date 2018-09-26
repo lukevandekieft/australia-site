@@ -1,7 +1,18 @@
+@mixin scrollAnimate {
+  transition: transform .25s, opacity .25s;
+  transition-timing-function: ease-out;
+}
+
+
+
 * {
   margin: 0 0;
   padding: 0 0;
   overflow: hidden;
+}
+
+body {
+  height: 4000px;
 }
 
 // body {
@@ -19,6 +30,7 @@
 #background {
   position: absolute;
   width: calc(300vw + 20vw);
+  @include scrollAnimate;
 }
 
 #mountain {
@@ -27,6 +39,7 @@
   bottom: 0;
   left: 0;
   max-width: 80%;
+  @include scrollAnimate;
 }
 
 #steps {
@@ -35,6 +48,7 @@
   bottom: 0;
   right: 0;
   max-width: 55%;
+  @include scrollAnimate;
 }
 
 .content {
