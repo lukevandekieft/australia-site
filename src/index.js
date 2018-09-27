@@ -2,7 +2,36 @@ import './scss/input.scss';
 import $ from "jquery";
 
 $(document).ready(function() {
-
+var iScrollPos = 0;
+  var counter = 0;
+  $("#parent-container").scroll(function() {
+    var iCurScrollPos = $(this).scrollTop();
+    iScrollPos = iCurScrollPos;
+    var windowHeight = $("#parent-container").height();
+    var scrollPercent = iCurScrollPos / (5000 - windowHeight);
+    $("#background").css("opacity", 1);
+    $("#steps").css("transform" , "translateX(" + (scrollPercent*900) + "px) scale(" + (1+(1*scrollPercent)) + ")");
+    $("#mountain").css("transform", "translateX(-" + (scrollPercent*700) + "px) scale(" + (1+(1*scrollPercent)) + ")");
+    $("#background").css("transform", "translateX(" + (20 * scrollPercent) + "px) scale(" + (1+(.33*scrollPercent)) + ")");
+    $("#mountain").css("opacity" , (1-(scrollPercent*1.54)));
+    $("#steps").css("opacity" , (1-(scrollPercent*2)));
+    console.log((1-scrollPercent));
+    if (scrollPercent >= 1) {
+      $("#background").css("opacity", 0);
+    }
+  });
+  $(window).scroll(function() {
+    var iCurScrollPos = $(this).scrollTop();
+    console.log((iCurScrollPos));
+    if (iCurScrollPos === 0) {
+      $("#background").css("opacity", 1);
+    } else {
+      $("#background").css("opacity", 0);
+      $("#mountain").css("opacity", 0);
+      $("#steps").css("opacity", 0);
+    }
+  });
+});
 
 // COUNTER SCROLL ANIMATION FUNCTION
   // var counter = 0;
@@ -92,53 +121,3 @@ $(document).ready(function() {
   //     }
   //   }
   // });
-
-
-
-var iScrollPos = 0;
-var counter = 0;
-$("#parent-container").scroll(function() {
-  var iCurScrollPos = $(this).scrollTop();
-  if(iCurScrollPos > iScrollPos) {
-    // Scrolling Down
-  } else {
-    // Scrolling Up
-  }
-  iScrollPos = iCurScrollPos;
-  var windowHeight = $("#parent-container").height();
-  var scrollPercent = iCurScrollPos / (5000 - windowHeight);
-  console.log(windowHeight + "  " + scrollPercent);
-});
-
-
-
-
-// $("#steps").css("transform" , "translateX(" + (counter*45) + "px) scale(" + (1+(counter/20)) + ")");
-// $("#steps").css("opacity" , 1-(counter/firstDisappear));
-// $("#mountain").css("transform", "translateX(-" + (counter*35) + "px) scale(" + (1+(counter/20)) + ")");
-// $("#mountain").css("opacity" , 1-(counter/firstDisappear));
-// $("#background").css("transform", "translateX(" + (counter*1) + "px) scale(" + (1+(counter/60)) + ")");
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
