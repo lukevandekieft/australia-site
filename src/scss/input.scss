@@ -1,3 +1,5 @@
+$off-white: #fbf7f5;
+
 @mixin scrollAnimate {
   transition: transform .25s, opacity .25s;
   transition-timing-function: ease-out;
@@ -24,16 +26,6 @@
   z-index: 1;
 }
 
-h1 {
-  position: absolute;
-  width: 100%;
-  top: 45%;
-  margin: 0 auto;
-  font-weight: 70px;
-  color: white;
-  text-align: center;
-
-}
 .child-container {
   height: 5000px;
   position: relative;
@@ -42,12 +34,6 @@ h1 {
 }
 
 .sub-child-container {
-  // img {
-  //   opacity: .1;
-  // }
-  img {
-    opacity: .1;
-  }
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -91,4 +77,120 @@ h1 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  h1 {
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    margin: 0 auto;
+    font-size: 5rem;
+    color: $off-white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 5px black;
+  }
+}
+
+.travel-packages-container {
+  width: 100%;
+  height: 65vh;
+  margin: 15vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  h1 {
+    font-size: 3rem;
+  }
+  .sub-package-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .package {
+      width: 300px;
+      height: 450px;
+      background: #d4822e;
+      color: #FFF;
+      h4{
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+       p {
+         margin: 0 30px;
+       }
+      font-weight: 200;
+      font-size: 14px;
+      .package-img-container {
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        img {
+          height: 100%;
+        }
+      }
+      // border: solid grey 1px;
+      &:nth-child(2) {
+        margin: 0 20px;
+      }
+    }
+  }
+}
+
+.pic-content {
+  height: calc(150vh + 30px);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  .photo-holder {
+    position: relative;
+    height: 50vh;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+    .img-content {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: $off-white;
+      .content {
+        margin: 0 50px;
+        width: 200px;
+        font-style: italic;
+        line-height: 1.3;
+        font-size: 19px;
+        h3 {
+          font-style: normal;
+          font-size: 40px;
+        }
+      }
+    }
+    &:nth-child(1), &:nth-child(3) {
+      .img-content {
+        align-items: flex-end;
+        color: white;
+        text-shadow: 0 0 1px black;
+      }
+    }
+  }
+}
+
+#salt-mine {
+  align-self: flex-start;
+  transform:rotateY(180deg);
+}
+
+#beach {
+  transform:rotateY(180deg);
 }
