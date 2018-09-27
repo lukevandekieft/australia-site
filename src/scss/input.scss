@@ -3,41 +3,49 @@
   transition-timing-function: ease-out;
 }
 
-
-
 * {
   margin: 0 0;
   padding: 0 0;
-  // overflow: hidden;
 }
 
-// body {
-//   height: 4000px;
-// }
-//
-// body {
-//   // height: 100%;
-// }
-
-.test {
-  overflow: hidden;
-  position: relative;
-  width: 100vw;
+#parent-container {
+  width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  position: relative;
+  overflow-y: scroll;
+  background-color: red;
+
+}
+.child-container {
+  height: 5000px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sub-child-container {
+  img {
+    opacity: .1;
+  }
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border: blue;
+  pointer-events:none
 }
 
 #background {
-  position: absolute;
-  width: calc(300vw + 20vw);
+  position: fixed;
+  width: 300vw;
+  z-index: 2;
   @include scrollAnimate;
 }
 
 #mountain {
-  position: absolute;
-  z-index: 2;
+  position: fixed;
+  z-index: 3;
   bottom: 0;
   left: 0;
   max-width: 80%;
@@ -45,14 +53,10 @@
 }
 
 #steps {
-  position: absolute;
-  z-index: 3;
+  position: fixed;
+  z-index: 4;
   bottom: 0;
   right: 0;
   max-width: 55%;
   @include scrollAnimate;
-}
-
-.content {
-  display: none;
 }
