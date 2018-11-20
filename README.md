@@ -12,17 +12,29 @@ _For my website this effect was achieved by creating an absolutely positioned to
 <br>
 <br>
 <kbd>
-  <img src="https://github.com/lukevandekieft/travel-peru/master/src/assets/images/live-site.gif">
+  <img src="https://github.com/lukevandekieft/travel-peru/blob/master/src/assets/images/live-site.gif">
 </kbd>
 
 ## Setup/Installation Requirements
 
-* _Download file from Github._
+_Live site is at https://travel-peru.firebaseapp.com/_
+<br>
+<br>
+
+_To download & edit do the following:_
+
+* _Get file from Github._
+
       $ git clone https://github.com/lukevandekieft/travel-peru.git
+
 * _Install NPM (node package manager) as needed - instructions can be found at https://www.npmjs.com/get-npm ._
+
 * _Install necessary webpack dependencies for project._
+
       $ npm install
+
 * _Compile and open webpage in developer mode._
+
       $ npm run start
 
 ## Technologies Used
